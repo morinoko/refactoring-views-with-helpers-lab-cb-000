@@ -847,3 +847,16 @@ SyntaxError (/home/morinoko/refactoring-views-with-helpers-lab-cb-000/app/models
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+
+
+Started PATCH "/songs/5" for 126.2.63.14 at 2018-10-25 23:26:42 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CJ54HguKORqmwOvconq4KIyIiv1XM3AHfN6E23fqtqDXAtdhEdoO5rCKYBblqApoOpz2SwvDzLHLCQIFHWz8aw==", "song"=>{"title"=>"Your Song", "artist_name"=>""}, "commit"=>"Update Song", "id"=>"5"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/morinoko/refactoring-views-with-helpers-lab-cb-000/app/models/song.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/song.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/songs_controller.rb:30:in `update'
+
+
