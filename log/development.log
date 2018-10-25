@@ -661,3 +661,42 @@ Processing by ArtistsController#show as HTML
   [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
   Rendered artists/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/artists/4" for 126.2.63.14 at 2018-10-25 23:20:01 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs" for 126.2.63.14 at 2018-10-25 23:20:05 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/songs/new" for 126.2.63.14 at 2018-10-25 23:20:09 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 126.2.63.14 at 2018-10-25 23:20:17 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vTBYL818Zznzr5IJflWHl6eGofPJ60iCIlvX2H9/jAhirPdQ1yxQxeXlGcM5hzXXEZLdRZUb9DSVjFEGFfnGww==", "song"=>{"title"=>"Boyfriend", "artist_name"=>""}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", ""]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Boyfriend"], ["artist_id", 3], ["created_at", "2018-10-25 23:20:17.604304"], ["updated_at", "2018-10-25 23:20:17.604304"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.31.156:54299/songs/4
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
