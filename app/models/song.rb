@@ -6,7 +6,7 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(name)
-    unless name.blank? do |name|
+    if !name.blank?
       artist = Artist.find_or_create_by(name: name)
       self.artist = artist
     end
